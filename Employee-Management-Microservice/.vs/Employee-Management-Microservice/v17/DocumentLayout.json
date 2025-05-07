@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|c:\\users\\q658366\\desktop\\projects--gitrepository\\employee-management-microservice\\employee-management-microservice\\employee-management-microservice\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|solutionrelative:employee-management-microservice\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|c:\\users\\q658366\\desktop\\projects--gitrepository\\employee-management-microservice\\employee-management-microservice\\employee-management-microservice\\appdbcontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|solutionrelative:employee-management-microservice\\appdbcontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|c:\\users\\q658366\\desktop\\projects--gitrepository\\employee-management-microservice\\employee-management-microservice\\employee-management-microservice\\migrations\\20250507185708_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|solutionrelative:employee-management-microservice\\migrations\\20250507185708_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|c:\\users\\q658366\\desktop\\projects--gitrepository\\employee-management-microservice\\employee-management-microservice\\employee-management-microservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|solutionrelative:employee-management-microservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|c:\\users\\q658366\\desktop\\projects--gitrepository\\employee-management-microservice\\employee-management-microservice\\employee-management-microservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|solutionrelative:employee-management-microservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|c:\\users\\q658366\\desktop\\projects--gitrepository\\employee-management-microservice\\employee-management-microservice\\employee-management-microservice\\userrepository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|solutionrelative:employee-management-microservice\\userrepository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|c:\\users\\q658366\\desktop\\projects--gitrepository\\employee-management-microservice\\employee-management-microservice\\employee-management-microservice\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|solutionrelative:employee-management-microservice\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|c:\\users\\q658366\\desktop\\projects--gitrepository\\employee-management-microservice\\employee-management-microservice\\employee-management-microservice\\appdbcontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|solutionrelative:employee-management-microservice\\appdbcontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|c:\\users\\q658366\\desktop\\projects--gitrepository\\employee-management-microservice\\employee-management-microservice\\employee-management-microservice\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,32 +51,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "20250507185708_initial.cs",
+              "DocumentMoniker": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Migrations\\20250507185708_initial.cs",
+              "RelativeDocumentMoniker": "Employee-Management-Microservice\\Migrations\\20250507185708_initial.cs",
+              "ToolTip": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Migrations\\20250507185708_initial.cs",
+              "RelativeToolTip": "Employee-Management-Microservice\\Migrations\\20250507185708_initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T18:57:10.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\appsettings.json",
+              "RelativeDocumentMoniker": "Employee-Management-Microservice\\appsettings.json",
+              "ToolTip": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\appsettings.json",
+              "RelativeToolTip": "Employee-Management-Microservice\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-07T18:54:29.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "Employee-Management-Microservice\\Services\\UserService.cs",
               "ToolTip": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Services\\UserService.cs",
               "RelativeToolTip": "Employee-Management-Microservice\\Services\\UserService.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAAAFAAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAAAFAAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T18:45:24.596Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Program.cs",
               "RelativeDocumentMoniker": "Employee-Management-Microservice\\Program.cs",
               "ToolTip": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Program.cs",
               "RelativeToolTip": "Employee-Management-Microservice\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAUwC0AAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T18:43:34.638Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ApplicationDbContext.CS",
               "DocumentMoniker": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\AppDbContext\\ApplicationDbContext.CS",
               "RelativeDocumentMoniker": "Employee-Management-Microservice\\AppDbContext\\ApplicationDbContext.CS",
@@ -87,14 +121,14 @@
               "RelativeDocumentMoniker": "Employee-Management-Microservice\\UserRepository\\UserRepository.cs",
               "ToolTip": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\UserRepository\\UserRepository.cs",
               "RelativeToolTip": "Employee-Management-Microservice\\UserRepository\\UserRepository.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAABMAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAABMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T18:41:26.237Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "DTOs.cs",
               "DocumentMoniker": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\DTO\\DTOs.cs",
               "RelativeDocumentMoniker": "Employee-Management-Microservice\\DTO\\DTOs.cs",
@@ -107,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Employee.cs",
               "DocumentMoniker": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Models\\Employee.cs",
               "RelativeDocumentMoniker": "Employee-Management-Microservice\\Models\\Employee.cs",
