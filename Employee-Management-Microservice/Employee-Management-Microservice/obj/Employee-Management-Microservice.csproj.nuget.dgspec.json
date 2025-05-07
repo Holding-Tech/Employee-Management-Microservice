@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\q658366\\Desktop\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj": {}
+    "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\q658366\\Desktop\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj": {
+    "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\q658366\\Desktop\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj",
+        "projectUniqueName": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj",
         "projectName": "Employee-Management-Microservice",
-        "projectPath": "C:\\Users\\q658366\\Desktop\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj",
+        "projectPath": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj",
         "packagesPath": "C:\\Users\\q658366\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\q658366\\Desktop\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\obj\\",
+        "outputPath": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,28 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
