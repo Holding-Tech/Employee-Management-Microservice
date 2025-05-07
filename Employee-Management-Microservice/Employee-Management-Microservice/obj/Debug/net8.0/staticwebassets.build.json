@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "zB9Hs4oS6jOP9Yu0FUFCvVkIxWOr4IBH99C/nZRP4L8=",
+  "Source": "Employee-Management-Microservice",
+  "BasePath": "_content/Employee-Management-Microservice",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

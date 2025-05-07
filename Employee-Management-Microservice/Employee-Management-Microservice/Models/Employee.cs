@@ -3,7 +3,6 @@
     using System;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data;
 
     public class Employee
     {
@@ -46,7 +45,62 @@
 
         [Required]
         public DateTime HireDate { get; set; }
+
+        [MaxLength(200)]
+        public string ContractTerm { get; set; }
+
+        [Required]
+        public DateTime FirstDayOfWork { get; set; }
+
+        public DateTime? LastDayOfWork { get; set; }
+
+        [MaxLength(200)]
+        public string WorkStatus { get; set; }
+
+        [MaxLength(50)]
+        public string ShiftType { get; set; }
+
+        [MaxLength(50)]
+        public string WorkAuthorization { get; set; }
+
+        [Required]
+        public DateTime ProbationEndDate { get; set; }
+
+        [MaxLength(200)]
+        public string Skills { get; set; }
+
+        public bool IsRemote { get; set; }
+
+        [Required]
+        public DateTime ContractStartDate { get; set; }
+
+        public DateTime? ContractEndDate { get; set; }
+
+        // Additional Properties
+
+        [Required]
+        public DateTime DateOfBirth { get; set; } // Employee's Date of Birth
+
+        [MaxLength(100)]
+        public string EmergencyContactName { get; set; } // Emergency Contact Person Name
+
+        [Phone]
+        [MaxLength(15)]
+        public string EmergencyContactNumber { get; set; } // Emergency Contact Phone Number
+
+        [MaxLength(100)]
+        public string Address { get; set; } // Employee's Residential Address
+
+        public decimal Salary { get; set; } // Employee's Salary
+
+        [MaxLength(50)]
+        public string Nationality { get; set; } // Employee's Nationality
+
+        public bool IsFullTime { get; set; } // Whether the employee is full-time or part-time
+
+        public string ProfilePictureUrl { get; set; } // URL to the employee's profile picture
     }
+
     public class Department
     {
         [Key]
@@ -66,5 +120,4 @@
         [MaxLength(50)]
         public string RoleName { get; set; }
     }
-
 }
