@@ -32,7 +32,7 @@
 
         [Required]
         [MaxLength(20)]
-        public string CompanyId { get; set; }
+        public string CompanyId { get; set; } // Unique ID for company-wide identification
 
         [Required]
         [EmailAddress]
@@ -55,28 +55,26 @@
         public DateTime? LastDayOfWork { get; set; }
 
         [MaxLength(200)]
-        public string WorkStatus { get; set; }
+        public string WorkStatus { get; set; } // e.g., Active, Terminated, Retired
 
         [MaxLength(50)]
-        public string ShiftType { get; set; }
+        public string ShiftType { get; set; } // e.g., Day, Night, Rotational
 
         [MaxLength(50)]
-        public string WorkAuthorization { get; set; }
+        public string WorkAuthorization { get; set; } // e.g., Visa Type, Work Permit
 
         [Required]
         public DateTime ProbationEndDate { get; set; }
 
         [MaxLength(200)]
-        public string Skills { get; set; }
+        public string Skills { get; set; } // Comma-separated list of skills
 
-        public bool IsRemote { get; set; }
+        public bool IsRemote { get; set; } // Indicates if the employee is working remotely
 
         [Required]
         public DateTime ContractStartDate { get; set; }
 
         public DateTime? ContractEndDate { get; set; }
-
-        // Additional Properties
 
         [Required]
         public DateTime DateOfBirth { get; set; } // Employee's Date of Birth
@@ -99,6 +97,19 @@
         public bool IsFullTime { get; set; } // Whether the employee is full-time or part-time
 
         public string ProfilePictureUrl { get; set; } // URL to the employee's profile picture
+
+        // Newly Added Fields
+        [MaxLength(200)]
+        public string JobTitle { get; set; } // Job title (e.g., Software Engineer, HR Manager)
+
+        public bool IsOnLeave { get; set; } // Indicates if the employee is currently on leave
+
+        public DateTime? LastPromotionDate { get; set; } // Date of the last promotion
+
+        [MaxLength(200)]
+        public string PerformanceRating { get; set; } // e.g., Excellent, Good, Needs Improvement
+
+        public bool IsEligibleForRehire { get; set; } // Indicates if the employee is eligible for rehire
     }
 
     public class Department
@@ -109,6 +120,12 @@
         [Required]
         [MaxLength(100)]
         public string Name { get; set; }
+
+        [MaxLength(100)]
+        public string Location { get; set; } // Location of the department
+
+        [MaxLength(500)]
+        public string Description { get; set; } // Description of the department's responsibilities
     }
 
     public class Role
@@ -118,6 +135,9 @@
 
         [Required]
         [MaxLength(50)]
-        public string RoleName { get; set; }
+        public string RoleName { get; set; } // Role name (e.g., Admin, Developer, Manager)
+
+        [MaxLength(200)]
+        public string RoleDescription { get; set; } // Description of the role's responsibilities
     }
 }

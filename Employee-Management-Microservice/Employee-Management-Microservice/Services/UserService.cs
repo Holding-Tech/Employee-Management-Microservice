@@ -1,7 +1,10 @@
-﻿using Employee_Management_Microservice.DTO.Employee_Management_Microservice.Models;
+﻿using Employee_Management_Microservice.DTO;
+using Employee_Management_Microservice.DTO.Employee_Management_Microservice.Models;
+using Employee_Management_Microservice.DTO.Employee_Management_Microservice.Models.Employee_Management_Microservice.DTO;
 using Employee_Management_Microservice.Models;
 using Employee_Management_Microservice.Repositories;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Employee_Management_Microservice.Services
@@ -10,9 +13,10 @@ namespace Employee_Management_Microservice.Services
     {
         Task<IEnumerable<UserReadDto>> GetAllUsersAsync();
         Task<UserReadDto> GetUserByIdAsync(int userId);
-        Task<UserReadDto> CreateUserAsync(UserCreateDto userCreateDto);
+        Task<UserFullDetailsDto> CreateUserAsync(UserCreateDto userCreateDto);
         Task UpdateUserAsync(UserUpdateDto userUpdateDto);
         Task DeleteUserAsync(int userId);
+        Task<List<EmployeeReportDto>> GetActiveEmployeesReportAsync();
     }
 
     public class UserService : IUserService
@@ -63,28 +67,49 @@ namespace Employee_Management_Microservice.Services
             };
         }
 
-        public async Task<UserReadDto> CreateUserAsync(UserCreateDto userCreateDto)
+        public async Task<UserFullDetailsDto> CreateUserAsync(UserCreateDto userCreateDto)
         {
+            // Create and initialize a User object
             var user = new User
             {
                 FirstName = userCreateDto.FirstName,
                 LastName = userCreateDto.LastName,
                 Email = userCreateDto.Email,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(userCreateDto.Password), // Hash the password
-                RoleName = userCreateDto.RoleName
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(userCreateDto.Password), // Hash the password securely
+                RoleName = userCreateDto.RoleName,
+                CreatedAt = DateTime.UtcNow,
+                IsActive = true // Default the user to active
             };
 
+            // Save the user to the repository
             await _userRepository.CreateUserAsync(user);
 
-            return new UserReadDto
+            // Fetch related role and department details
+            var role = await _userRepository.GetRoleByNameAsync(user.RoleName);
+            var department = await _userRepository.GetDepartmentByIdAsync(userCreateDto.DepId);
+
+            // Return the UserFullDetailsDto with all relevant details
+            return new UserFullDetailsDto
             {
                 UserId = user.UserId,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email,
                 RoleName = user.RoleName,
+                RoleDescription = role?.RoleDescription,
+                DepartmentName = department?.Name,
+                DepartmentLocation = department?.Location,
                 CreatedAt = user.CreatedAt,
-                IsActive = user.IsActive
+                IsActive = user.IsActive,
+                Salary = userCreateDto.Salary,
+                JobTitle = userCreateDto.JobTitle,
+                IsFullTime = userCreateDto.IsFullTime,
+                IsRemote = userCreateDto.IsRemote,
+                DateOfBirth = userCreateDto.DateOfBirth,
+                HireDate = userCreateDto.HireDate,
+                EmergencyContactName = userCreateDto.EmergencyContactName,
+                EmergencyContactNumber = userCreateDto.EmergencyContactNumber,
+                Address = userCreateDto.Address
             };
         }
 
@@ -108,6 +133,22 @@ namespace Employee_Management_Microservice.Services
         public async Task DeleteUserAsync(int userId)
         {
             await _userRepository.DeleteUserAsync(userId);
+        }
+
+        public async Task<List<EmployeeReportDto>> GetActiveEmployeesReportAsync()
+        {
+            var activeEmployees = await _userRepository.GetEmployeesByStatusAsync("Active");
+            return activeEmployees.Select(e => new EmployeeReportDto
+            {
+                EmployeeId = e.EmployeeId,
+                FirstName = e.FirstName,
+                LastName = e.LastName,
+                DepartmentName = e.Department.Name,
+                Email = e.Email,
+                PhoneNumber = e.PhoneNumber,
+                WorkStatus = e.WorkStatus,
+                HireDate = e.HireDate
+            }).ToList();
         }
     }
 }
