@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|c:\\users\\q658366\\desktop\\projects--gitrepository\\employee-management-microservice\\employee-management-microservice\\employee-management-microservice\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|solutionrelative:employee-management-microservice\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|c:\\users\\q658366\\desktop\\projects--gitrepository\\employee-management-microservice\\employee-management-microservice\\employee-management-microservice\\dto\\dtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3394B8E9-7EFF-4425-B5F3-546230C3A1E3}|Employee-Management-Microservice\\Employee-Management-Microservice.csproj|solutionrelative:employee-management-microservice\\dto\\dtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,11 +18,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DTOs.cs",
+              "DocumentMoniker": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\DTO\\DTOs.cs",
+              "RelativeDocumentMoniker": "Employee-Management-Microservice\\DTO\\DTOs.cs",
+              "ToolTip": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\DTO\\DTOs.cs",
+              "RelativeToolTip": "Employee-Management-Microservice\\DTO\\DTOs.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAAGoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T18:05:01.428Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -28,7 +45,7 @@
               "RelativeDocumentMoniker": "Employee-Management-Microservice\\Models\\Employee.cs",
               "ToolTip": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Models\\Employee.cs",
               "RelativeToolTip": "Employee-Management-Microservice\\Models\\Employee.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-05T19:37:40.104Z",
               "EditorCaption": ""
