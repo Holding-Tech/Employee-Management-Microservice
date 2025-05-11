@@ -1,4 +1,5 @@
-﻿using Employee_Management_Microservice.DTO.Employee_Management_Microservice.Models;
+﻿using Employee_Management_Microservice.AppDbContext;
+using Employee_Management_Microservice.DTO.Employee_Management_Microservice.Models;
 using Employee_Management_Microservice.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -23,9 +24,9 @@ namespace Employee_Management_Microservice.Repositories
 
     public class UserRepository : IUserRepository
     {
-        private readonly ApplicationDbContext.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public UserRepository(ApplicationDbContext.ApplicationDbContext context)
+        public UserRepository(ApplicationDbContext  context)
         {
             _context = context;
         }

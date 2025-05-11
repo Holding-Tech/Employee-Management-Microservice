@@ -1,7 +1,8 @@
-using Employee_Management_Microservice.ApplicationDbContext;
+
 using Microsoft.EntityFrameworkCore;
 using Employee_Management_Microservice.Repositories;
 using Employee_Management_Microservice.Services;
+using Employee_Management_Microservice.AppDbContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Configure DbContext to use the local database
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
 
 // Register controllers
 builder.Services.AddControllers();

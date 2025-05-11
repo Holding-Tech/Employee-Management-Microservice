@@ -9,28 +9,21 @@
         public class User
         {
             [Key]
-            [Required]
+         
             public int UserId { get; set; }
 
-            [Required]
-            [MaxLength(50)]
             public string FirstName { get; set; }
 
-            [Required]
-            [MaxLength(50)]
+          
             public string LastName { get; set; }
 
-            [Required]
-            [EmailAddress]
-            [MaxLength(100)]
+          
             public string Email { get; set; }
 
-            [Required]
-            [MaxLength(100)]
+          
             public string PasswordHash { get; set; }
 
-            [Required]
-            [MaxLength(50)]
+            
             public string RoleName { get; set; } // e.g., Admin, HR, Developer, etc.
 
             public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

@@ -7,7 +7,7 @@
     public class Employee
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        
         public int EmployeeId { get; set; }
 
         [Required]
