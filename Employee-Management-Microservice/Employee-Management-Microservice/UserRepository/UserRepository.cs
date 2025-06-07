@@ -1,102 +1,70 @@
-﻿using Employee_Management_Microservice.DTO.Employee_Management_Microservice.Models;
-using Employee_Management_Microservice.Models;
+﻿using Employee_Management_Microservice.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Employee_Management_Microservice.Repositories
 {
-    public interface IUserRepository
+    public interface IEmployeeRepository
     {
-        Task<IEnumerable<User>> GetAllUsersAsync();
-        Task<User> GetUserByIdAsync(int userId);
-        Task<User> CreateUserAsync(User user);
-        Task UpdateUserAsync(User user);
-        Task DeleteUserAsync(int userId);
-        Task<List<Employee>> GetEmployeesByStatusAsync(string status);
+        Task<IEnumerable<Employee>> GetAllEmployeesAsync();
+        Task<Employee> GetEmployeeByIdAsync(int employeeId);
+        Task<Employee> CreateEmployeeAsync(Employee employee);
+        Task UpdateEmployeeAsync(Employee employee);
+        Task DeleteEmployeeAsync(int employeeId);
 
-        // New Methods
-        Task<Role> GetRoleByNameAsync(string roleName);
+        Task<Role> GetRoleByIdAsync(int roleId);
         Task<Department> GetDepartmentByIdAsync(int departmentId);
     }
 
-    public class UserRepository : IUserRepository
+    public class EmployeeRepository : IEmployeeRepository
     {
-        private readonly ApplicationDbContext.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public UserRepository(ApplicationDbContext.ApplicationDbContext context)
+        public EmployeeRepository(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public async Task<IEnumerable<User>> GetAllUsersAsync()
+        public async Task<IEnumerable<Employee>> GetAllEmployeesAsync()
         {
-            return await _context.Users.ToListAsync();
+            return await _context.Employees.ToListAsync();
         }
 
-        public async Task<User> GetUserByIdAsync(int userId)
+        public async Task<Employee> GetEmployeeByIdAsync(int employeeId)
         {
-            return await _context.Users.FindAsync(userId);
+            return await _context.Employees.FindAsync(employeeId);
         }
 
-        public async Task<User> CreateUserAsync(User user)
+        public async Task<Employee> CreateEmployeeAsync(Employee employee)
         {
-            _context.Users.Add(user);
+            _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
-            return user;
+            return employee;
         }
 
-        public async Task UpdateUserAsync(User user)
+        public async Task UpdateEmployeeAsync(Employee employee)
         {
-            _context.Users.Update(user);
+            _context.Employees.Update(employee);
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteUserAsync(int userId)
+        public async Task DeleteEmployeeAsync(int employeeId)
         {
-            var user = await _context.Users.FindAsync(userId);
-            if (user != null)
+            var employee = await _context.Employees.FindAsync(employeeId);
+            if (employee != null)
             {
-                _context.Users.Remove(user);
+                _context.Employees.Remove(employee);
                 await _context.SaveChangesAsync();
             }
         }
 
-        /// <summary>
-        /// Get all employees with a specific work status.
-        /// </summary>
-        /// <param name="status">The work status to filter employees by (e.g., "Active").</param>
-        /// <returns>A list of employees with the specified work status.</returns>
-        public async Task<List<Employee>> GetEmployeesByStatusAsync(string status)
+        public async Task<Role> GetRoleByIdAsync(int roleId)
         {
-            return await _context.Employees
-                .Include(e => e.Department) // Include related Department entity
-                .Include(e => e.Role)      // Include related Role entity
-                .Where(e => e.WorkStatus == status) // Filter by work status
-                .ToListAsync();
+            return await _context.Roles.FirstOrDefaultAsync(r => r.RoleId == roleId);
         }
 
-        /// <summary>
-        /// Retrieve a Role by its name.
-        /// </summary>
-        /// <param name="roleName">The name of the role.</param>
-        /// <returns>The Role object if found; otherwise, null.</returns>
-        public async Task<Role> GetRoleByNameAsync(string roleName)
-        {
-            return await _context.Roles
-                .FirstOrDefaultAsync(r => r.RoleName == roleName);
-        }
-
-        /// <summary>
-        /// Retrieve a Department by its ID.
-        /// </summary>
-        /// <param name="departmentId">The ID of the department.</param>
-        /// <returns>The Department object if found; otherwise, null.</returns>
         public async Task<Department> GetDepartmentByIdAsync(int departmentId)
         {
-            return await _context.Departments
-                .FirstOrDefaultAsync(d => d.DepartmentId == departmentId);
+            return await _context.Departments.FirstOrDefaultAsync(d => d.DepartmentId == departmentId);
         }
     }
 }

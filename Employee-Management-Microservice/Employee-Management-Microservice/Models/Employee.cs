@@ -18,17 +18,14 @@
         [MaxLength(50)]
         public string LastName { get; set; }
 
-        [ForeignKey("Department")]
+       
         public int DepartmentId { get; set; }
-        public Department Department { get; set; }
 
-        [ForeignKey("ReportingManager")]
         public int? ReportingManager { get; set; }
-        public Employee Manager { get; set; }
 
-        [ForeignKey("Role")]
+
         public int RoleId { get; set; }
-        public Role Role { get; set; }
+    
 
         [Required]
         [MaxLength(20)]

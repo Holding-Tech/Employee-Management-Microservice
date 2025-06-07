@@ -1,28 +1,26 @@
-using Employee_Management_Microservice.ApplicationDbContext;
-using Microsoft.EntityFrameworkCore;
+﻿using Employee_Management_Microservice;
 using Employee_Management_Microservice.Repositories;
 using Employee_Management_Microservice.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container
 
-// Configure DbContext to use the local database
+// ✅ Add EF Core DbContext with connection string
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Register controllers
+// ✅ Register repositories and services
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>(); // ✅ this was the issue
+
+// ✅ Add controllers
 builder.Services.AddControllers();
 
-// Register Swagger/OpenAPI services
+// ✅ Add Swagger/OpenAPI for API documentation
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-// Register repositories
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-
-// Register services
-builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 
@@ -33,14 +31,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Enforce HTTPS
 app.UseHttpsRedirection();
 
-// Add authorization middleware
 app.UseAuthorization();
 
-// Map controller endpoints
 app.MapControllers();
 
-// Run the application
 app.Run();

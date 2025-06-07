@@ -5,61 +5,36 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/User/all": {
+    "/api/Employee": {
       "get": {
         "tags": [
-          "User"
+          "Employee"
         ],
         "responses": {
           "200": {
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/User/{id}": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/User/create": {
+      },
       "post": {
         "tags": [
-          "User"
+          "Employee"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/Employee"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/Employee"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/Employee"
               }
             }
           }
@@ -71,26 +46,58 @@
         }
       }
     },
-    "/api/User/update": {
+    "/api/Employee/{id}": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "put": {
         "tags": [
-          "User"
+          "Employee"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/Employee"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/Employee"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/Employee"
               }
             }
           }
@@ -100,12 +107,10 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/User/delete/{id}": {
+      },
       "delete": {
         "tags": [
-          "User"
+          "Employee"
         ],
         "parameters": [
           {
@@ -125,97 +130,10 @@
         }
       }
     },
-    "/api/User/employees/status/{status}": {
+    "/api/Employee/department/{departmentId}": {
       "get": {
         "tags": [
-          "User"
-        ],
-        "parameters": [
-          {
-            "name": "status",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/User/employees/report/active": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/User/paginated": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "parameters": [
-          {
-            "name": "pageNumber",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32",
-              "default": 1
-            }
-          },
-          {
-            "name": "pageSize",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32",
-              "default": 10
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/User/search": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "parameters": [
-          {
-            "name": "name",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/User/department/{departmentId}": {
-      "get": {
-        "tags": [
-          "User"
+          "Employee"
         ],
         "parameters": [
           {
@@ -235,41 +153,20 @@
         }
       }
     },
-    "/api/User/reset-password/{userId}": {
-      "post": {
+    "/api/Employee/search": {
+      "get": {
         "tags": [
-          "User"
+          "Employee"
         ],
         "parameters": [
           {
-            "name": "userId",
-            "in": "path",
-            "required": true,
+            "name": "name",
+            "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "string"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -277,10 +174,10 @@
         }
       }
     },
-    "/api/User/exists-by-email": {
+    "/api/Employee/exists-by-email": {
       "get": {
         "tags": [
-          "User"
+          "Employee"
         ],
         "parameters": [
           {
@@ -301,18 +198,21 @@
   },
   "components": {
     "schemas": {
-      "User": {
+      "Employee": {
         "required": [
+          "companyId",
+          "contractStartDate",
+          "dateOfBirth",
           "email",
+          "firstDayOfWork",
           "firstName",
+          "hireDate",
           "lastName",
-          "passwordHash",
-          "roleName",
-          "userId"
+          "probationEndDate"
         ],
         "type": "object",
         "properties": {
-          "userId": {
+          "employeeId": {
             "type": "integer",
             "format": "int32"
           },
@@ -326,27 +226,145 @@
             "minLength": 1,
             "type": "string"
           },
+          "departmentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reportingManager": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "roleId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "companyId": {
+            "maxLength": 20,
+            "minLength": 1,
+            "type": "string"
+          },
           "email": {
             "maxLength": 100,
             "minLength": 1,
             "type": "string",
             "format": "email"
           },
-          "passwordHash": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
+          "phoneNumber": {
+            "maxLength": 15,
+            "type": "string",
+            "format": "tel",
+            "nullable": true
           },
-          "roleName": {
-            "maxLength": 50,
-            "minLength": 1,
-            "type": "string"
-          },
-          "createdAt": {
+          "hireDate": {
             "type": "string",
             "format": "date-time"
           },
-          "isActive": {
+          "contractTerm": {
+            "maxLength": 200,
+            "type": "string",
+            "nullable": true
+          },
+          "firstDayOfWork": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastDayOfWork": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "workStatus": {
+            "maxLength": 200,
+            "type": "string",
+            "nullable": true
+          },
+          "shiftType": {
+            "maxLength": 50,
+            "type": "string",
+            "nullable": true
+          },
+          "workAuthorization": {
+            "maxLength": 50,
+            "type": "string",
+            "nullable": true
+          },
+          "probationEndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "skills": {
+            "maxLength": 200,
+            "type": "string",
+            "nullable": true
+          },
+          "isRemote": {
+            "type": "boolean"
+          },
+          "contractStartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "contractEndDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "emergencyContactName": {
+            "maxLength": 100,
+            "type": "string",
+            "nullable": true
+          },
+          "emergencyContactNumber": {
+            "maxLength": 15,
+            "type": "string",
+            "format": "tel",
+            "nullable": true
+          },
+          "address": {
+            "maxLength": 100,
+            "type": "string",
+            "nullable": true
+          },
+          "salary": {
+            "type": "number",
+            "format": "double"
+          },
+          "nationality": {
+            "maxLength": 50,
+            "type": "string",
+            "nullable": true
+          },
+          "isFullTime": {
+            "type": "boolean"
+          },
+          "profilePictureUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "jobTitle": {
+            "maxLength": 200,
+            "type": "string",
+            "nullable": true
+          },
+          "isOnLeave": {
+            "type": "boolean"
+          },
+          "lastPromotionDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "performanceRating": {
+            "maxLength": 200,
+            "type": "string",
+            "nullable": true
+          },
+          "isEligibleForRehire": {
             "type": "boolean"
           }
         },

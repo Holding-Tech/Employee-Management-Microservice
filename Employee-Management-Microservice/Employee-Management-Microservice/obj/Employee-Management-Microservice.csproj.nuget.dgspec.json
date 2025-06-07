@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj": {}
+    "C:\\Users\\student\\Pictures\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj": {
+    "C:\\Users\\student\\Pictures\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj",
+        "projectUniqueName": "C:\\Users\\student\\Pictures\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj",
         "projectName": "Employee-Management-Microservice",
-        "projectPath": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj",
-        "packagesPath": "C:\\Users\\q658366\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\q658366\\Desktop\\projects--gitrepository\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\obj\\",
+        "projectPath": "C:\\Users\\student\\Pictures\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice.csproj",
+        "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\student\\Pictures\\Employee-Management-Microservice\\Employee-Management-Microservice\\Employee-Management-Microservice\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\q658366\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -96,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

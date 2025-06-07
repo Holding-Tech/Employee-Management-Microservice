@@ -1,8 +1,34 @@
 [
   {
-    "ContainingType": "Employee_Management_Microservice.Controllers.UserController",
-    "Method": "GetUserById",
-    "RelativePath": "api/User/{id}",
+    "ContainingType": "Employee_Management_Microservice.Controllers.EmployeeController",
+    "Method": "GetAllEmployees",
+    "RelativePath": "api/Employee",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_Microservice.Controllers.EmployeeController",
+    "Method": "CreateEmployee",
+    "RelativePath": "api/Employee",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employee",
+        "Type": "Employee_Management_Microservice.Models.Employee",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_Microservice.Controllers.EmployeeController",
+    "Method": "GetEmployeeById",
+    "RelativePath": "api/Employee/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -16,35 +42,30 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Employee_Management_Microservice.Controllers.UserController",
-    "Method": "GetAllUsers",
-    "RelativePath": "api/User/all",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Employee_Management_Microservice.Controllers.UserController",
-    "Method": "CreateUser",
-    "RelativePath": "api/User/create",
-    "HttpMethod": "POST",
+    "ContainingType": "Employee_Management_Microservice.Controllers.EmployeeController",
+    "Method": "UpdateEmployee",
+    "RelativePath": "api/Employee/{id}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "Employee_Management_Microservice.DTO.Employee_Management_Microservice.Models.User",
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "employee",
+        "Type": "Employee_Management_Microservice.Models.Employee",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Employee_Management_Microservice.Controllers.UserController",
-    "Method": "DeleteUser",
-    "RelativePath": "api/User/delete/{id}",
+    "ContainingType": "Employee_Management_Microservice.Controllers.EmployeeController",
+    "Method": "DeleteEmployee",
+    "RelativePath": "api/Employee/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -58,9 +79,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Employee_Management_Microservice.Controllers.UserController",
-    "Method": "GetUsersByDepartment",
-    "RelativePath": "api/User/department/{departmentId}",
+    "ContainingType": "Employee_Management_Microservice.Controllers.EmployeeController",
+    "Method": "GetEmployeesByDepartment",
+    "RelativePath": "api/Employee/department/{departmentId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -74,35 +95,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Employee_Management_Microservice.Controllers.UserController",
-    "Method": "GetActiveEmployeesReport",
-    "RelativePath": "api/User/employees/report/active",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Employee_Management_Microservice.Controllers.UserController",
-    "Method": "GetEmployeesByStatus",
-    "RelativePath": "api/User/employees/status/{status}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "status",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Employee_Management_Microservice.Controllers.UserController",
-    "Method": "CheckIfUserExistsByEmail",
-    "RelativePath": "api/User/exists-by-email",
+    "ContainingType": "Employee_Management_Microservice.Controllers.EmployeeController",
+    "Method": "CheckIfEmployeeExistsByEmail",
+    "RelativePath": "api/Employee/exists-by-email",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -116,51 +111,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Employee_Management_Microservice.Controllers.UserController",
-    "Method": "GetPaginatedUsers",
-    "RelativePath": "api/User/paginated",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "pageNumber",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "pageSize",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Employee_Management_Microservice.Controllers.UserController",
-    "Method": "ResetPassword",
-    "RelativePath": "api/User/reset-password/{userId}",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "newPassword",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Employee_Management_Microservice.Controllers.UserController",
-    "Method": "SearchUsersByName",
-    "RelativePath": "api/User/search",
+    "ContainingType": "Employee_Management_Microservice.Controllers.EmployeeController",
+    "Method": "SearchEmployees",
+    "RelativePath": "api/Employee/search",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -169,22 +122,6 @@
         "Name": "name",
         "Type": "System.String",
         "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Employee_Management_Microservice.Controllers.UserController",
-    "Method": "UpdateUser",
-    "RelativePath": "api/User/update",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "user",
-        "Type": "Employee_Management_Microservice.DTO.Employee_Management_Microservice.Models.User",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []

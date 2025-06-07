@@ -1,8 +1,6 @@
-﻿using Employee_Management_Microservice.DTO.Employee_Management_Microservice.Models;
-using Employee_Management_Microservice.Models;
+﻿using Employee_Management_Microservice.Models;
 using Employee_Management_Microservice.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,208 +8,97 @@ namespace Employee_Management_Microservice.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    public class EmployeeController : ControllerBase
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IEmployeeRepository _employeeRepository;
 
-        public UserController(IUserRepository userRepository)
+        public EmployeeController(IEmployeeRepository employeeRepository)
         {
-            _userRepository = userRepository;
+            _employeeRepository = employeeRepository;
         }
 
-        /// <summary>
-        /// Get all users in the system.
-        /// </summary>
-        [HttpGet("all")]
-        public async Task<IActionResult> GetAllUsers()
+        [HttpGet]
+        public async Task<IActionResult> GetAllEmployees()
         {
-            var users = await _userRepository.GetAllUsersAsync();
-            return Ok(users);
+            var employees = await _employeeRepository.GetAllEmployeesAsync();
+            return Ok(employees);
         }
 
-        /// <summary>
-        /// Get a user by ID.
-        /// </summary>
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetUserById(int id)
+        public async Task<IActionResult> GetEmployeeById(int id)
         {
-            var user = await _userRepository.GetUserByIdAsync(id);
-            if (user == null)
-                return NotFound(new { Message = "User not found." });
+            var employee = await _employeeRepository.GetEmployeeByIdAsync(id);
+            if (employee == null)
+                return NotFound(new { Message = "Employee not found." });
 
-            return Ok(user);
+            return Ok(employee);
         }
 
-        /// <summary>
-        /// Create a new user.
-        /// </summary>
-        [HttpPost("create")]
-        public async Task<IActionResult> CreateUser([FromBody] User user)
+        [HttpPost]
+        public async Task<IActionResult> CreateEmployee([FromBody] Employee employee)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var createdUser = await _userRepository.CreateUserAsync(user);
-            return CreatedAtAction(nameof(GetUserById), new { id = createdUser.UserId }, createdUser);
+            var created = await _employeeRepository.CreateEmployeeAsync(employee);
+            return Ok(created); // ✅ This returns 200 OK with the employee data
         }
 
-        /// <summary>
-        /// Update a user's information.
-        /// </summary>
-        [HttpPut("update")]
-        public async Task<IActionResult> UpdateUser([FromBody] User user)
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateEmployee(int id, [FromBody] Employee employee)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            await _userRepository.UpdateUserAsync(user);
+            var existing = await _employeeRepository.GetEmployeeByIdAsync(id);
+            if (existing == null)
+                return NotFound(new { Message = "Employee not found." });
+
+            employee.EmployeeId = id;
+            await _employeeRepository.UpdateEmployeeAsync(employee);
+
             return NoContent();
         }
 
-        /// <summary>
-        /// Delete a user by ID.
-        /// </summary>
-        [HttpDelete("delete/{id}")]
-        public async Task<IActionResult> DeleteUser(int id)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteEmployee(int id)
         {
-            var user = await _userRepository.GetUserByIdAsync(id);
-            if (user == null)
-                return NotFound(new { Message = "User not found." });
+            var existing = await _employeeRepository.GetEmployeeByIdAsync(id);
+            if (existing == null)
+                return NotFound(new { Message = "Employee not found." });
 
-            await _userRepository.DeleteUserAsync(id);
+            await _employeeRepository.DeleteEmployeeAsync(id);
             return NoContent();
         }
 
-        /// <summary>
-        /// Get all employees with a specific work status.
-        /// </summary>
-        /// <param name="status">The status to filter employees by (e.g., "Active").</param>
-        [HttpGet("employees/status/{status}")]
-        public async Task<IActionResult> GetEmployeesByStatus(string status)
-        {
-            var employees = await _userRepository.GetEmployeesByStatusAsync(status);
-            var employeeDtos = employees.Select(e => new
-            {
-                e.EmployeeId,
-                FullName = $"{e.FirstName} {e.LastName}",
-                e.Email,
-                e.PhoneNumber,
-                Department = e.Department?.Name,
-                Role = e.Role?.RoleName,
-                e.WorkStatus,
-                e.HireDate
-            });
+      
 
-            return Ok(employeeDtos);
-        }
-
-        /// <summary>
-        /// Get a full report of all active employees.
-        /// </summary>
-        [HttpGet("employees/report/active")]
-        public async Task<IActionResult> GetActiveEmployeesReport()
-        {
-            var employees = await _userRepository.GetEmployeesByStatusAsync("Active");
-            var report = employees.Select(e => new
-            {
-                e.EmployeeId,
-                FullName = $"{e.FirstName} {e.LastName}",
-                e.Email,
-                e.PhoneNumber,
-                Department = e.Department?.Name,
-                Role = e.Role?.RoleName,
-                e.WorkStatus,
-                e.HireDate,
-                e.IsRemote
-            });
-
-            return Ok(report);
-        }
-
-        // NEW METHODS
-
-        /// <summary>
-        /// Get users with pagination.
-        /// </summary>
-        [HttpGet("paginated")]
-        public async Task<IActionResult> GetPaginatedUsers(int pageNumber = 1, int pageSize = 10)
-        {
-            var users = await _userRepository.GetAllUsersAsync();
-            var paginatedUsers = users
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize);
-
-            return Ok(new
-            {
-                TotalCount = users.Count(),
-                PageNumber = pageNumber,
-                PageSize = pageSize,
-                Users = paginatedUsers
-            });
-        }
-
-        /// <summary>
-        /// Search users by name.
-        /// </summary>
-        [HttpGet("search")]
-        public async Task<IActionResult> SearchUsersByName(string name)
-        {
-            var users = await _userRepository.GetAllUsersAsync();
-            var filteredUsers = users
-                .Where(u => u.FirstName.Contains(name, System.StringComparison.OrdinalIgnoreCase) ||
-                            u.LastName.Contains(name, System.StringComparison.OrdinalIgnoreCase));
-
-            return Ok(filteredUsers);
-        }
-
-        /// <summary>
-        /// Get users by department ID.
-        /// </summary>
         [HttpGet("department/{departmentId}")]
-        public async Task<IActionResult> GetUsersByDepartment(int departmentId)
+        public async Task<IActionResult> GetEmployeesByDepartment(int departmentId)
         {
-            var employees = await _userRepository.GetEmployeesByStatusAsync("Active");
-            var usersInDepartment = employees
-                .Where(e => e.DepartmentId == departmentId)
-                .Select(e => new
-                {
-                    e.EmployeeId,
-                    FullName = $"{e.FirstName} {e.LastName}",
-                    e.Email,
-                    e.PhoneNumber,
-                    e.WorkStatus
-                });
-
-            return Ok(usersInDepartment);
+            var employees = await _employeeRepository.GetAllEmployeesAsync();
+            var result = employees.Where(e => e.DepartmentId == departmentId);
+            return Ok(result);
         }
 
-        /// <summary>
-        /// Reset a user's password.
-        /// </summary>
-        [HttpPost("reset-password/{userId}")]
-        public async Task<IActionResult> ResetPassword(int userId, [FromBody] string newPassword)
+        [HttpGet("search")]
+        public async Task<IActionResult> SearchEmployees(string name)
         {
-            var user = await _userRepository.GetUserByIdAsync(userId);
-            if (user == null)
-                return NotFound(new { Message = "User not found." });
+            var employees = await _employeeRepository.GetAllEmployeesAsync();
+            var result = employees.Where(e =>
+                (!string.IsNullOrEmpty(e.FirstName) && e.FirstName.Contains(name)) ||
+                (!string.IsNullOrEmpty(e.LastName) && e.LastName.Contains(name)));
 
-            // Simulate password reset (should include hashing in real-world scenarios)
-           // user.Password = newPassword;
-            await _userRepository.UpdateUserAsync(user);
-
-            return Ok(new { Message = "Password reset successfully." });
+            return Ok(result);
         }
 
-        /// <summary>
-        /// Check if a user exists by email.
-        /// </summary>
         [HttpGet("exists-by-email")]
-        public async Task<IActionResult> CheckIfUserExistsByEmail(string email)
+        public async Task<IActionResult> CheckIfEmployeeExistsByEmail(string email)
         {
-            var users = await _userRepository.GetAllUsersAsync();
-            var userExists = users.Any(u => u.Email.Equals(email, System.StringComparison.OrdinalIgnoreCase));
-
-            return Ok(new { Exists = userExists });
+            var employees = await _employeeRepository.GetAllEmployeesAsync();
+            var exists = employees.Any(e => e.Email.Equals(email, System.StringComparison.OrdinalIgnoreCase));
+            return Ok(new { Exists = exists });
         }
     }
 }
